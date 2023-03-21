@@ -1,0 +1,11 @@
+Package: com.lizynz.telegaicons
+Name: Telega Icons
+Depends: mobilesubstrate, firmware (>= 11.0)
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Change the telegram icon
+Depiction: https://lizynz.github.io/depictions/?p=com.lizynz.telegaicons
+SileoDepiction: https://lizynz.github.io/depictions/com.lizynz.telegaicons/TelegaIcons.json
+Maintainer: Lizynz <lizynz@ya.ru>
+Author: Lizynz <lizynz@ya.ru>
+Section: Tweaks
