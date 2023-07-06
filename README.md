@@ -1,2 +1,2 @@
 # Telega-Icons
-Change the telegram icon (iOS tweak) / Tested on iOS 15.x - 16.x (palera1n).
+Change the telegram icon (iOS tweak) / Tested on iOS 15.x - 17.x (Dopamine, palera1n and bakera1n).
