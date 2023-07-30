@@ -1,7 +1,5 @@
 #import <substrate.h>
 
-#define kRWSettingsPath @"/var/mobile/Library/Preferences/com.lizynz.telegaicons.plist"
-
 static const NSBundle *tweakBundle = [NSBundle bundleWithPath:@"/Library/Application Support/Telega/Localizations.bundle"];
 #define LOCALIZED(str) [tweakBundle localizedStringForKey:str value:@"" table:nil]
 
