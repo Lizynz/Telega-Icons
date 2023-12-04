@@ -1,7 +1,6 @@
-Package: com.lizynz.telegaicons
+Package: com.lizynz.telegaicons.rootless
 Name: Telega Icons
-Depends: mobilesubstrate, firmware (>= 11.0)
-Version: 1.0
+Depends: mobilesubstrate, firmware (>= 15.0)
 Architecture: iphoneos-arm
 Description: Change the telegram icon
 Depiction: https://lizynz.github.io/depictions/?p=com.lizynz.telegaicons
@@ -9,3 +8,5 @@ SileoDepiction: https://lizynz.github.io/depictions/com.lizynz.telegaicons/Teleg
 Maintainer: Lizynz <lizynz@ya.ru>
 Author: Lizynz <lizynz@ya.ru>
 Section: Tweaks
+Version: 1.0
+

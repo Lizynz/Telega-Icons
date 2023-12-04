@@ -1,7 +1,14 @@
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+#import <TelegaIcons-Swift.h>
 #import <substrate.h>
 
-static const NSBundle *tweakBundle = [NSBundle bundleWithPath:@"/Library/Application Support/Telega/Localizations.bundle"];
+static const NSBundle *tweakBundle = [NSBundle bundleWithPath:@"/var/jb/Library/Application Support/Telega/Localizations.bundle"];
 #define LOCALIZED(str) [tweakBundle localizedStringForKey:str value:@"" table:nil]
+
+//static const NSBundle *tweakBundle = [NSBundle bundleWithPath:@"/Library/Application Support/Telega/Localizations.bundle"];
+//#define LOCALIZED(str) [tweakBundle localizedStringForKey:str value:@"" table:nil]
 
 @interface SBIconView : NSObject
 - (NSString*)applicationBundleIdentifier;
@@ -49,41 +56,8 @@ static const NSBundle *tweakBundle = [NSBundle bundleWithPath:@"/Library/Applica
 - (void)application:(id)arg1 performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(id)arg3 {
     %orig;
     if([shortcutItem.type isEqualToString:@"iconsChange"]) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:LOCALIZED(@"Change Icons")
-                    message:LOCALIZED(@"Choose one of three premium icons for Telegram")
-                    delegate:self
-                    cancelButtonTitle:LOCALIZED(@"Cancel")
-                    otherButtonTitles:@"Premium.png", @"Turbo.png", @"Black.png", nil];
-                
-            [alert show];
-        });
-    }
-}
-
-%new
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSString *button = [alertView buttonTitleAtIndex:buttonIndex];
-    if ([button isEqualToString:@"Premium.png"]) {
-        [[UIApplication sharedApplication] setAlternateIconName:@"Premium" completionHandler:^(NSError * _Nullable error) {
-            if (error == nil) {
-            }else{
-            }
-        }];
-
-    } else if ([button isEqualToString:@"Turbo.png"]) {
-        [[UIApplication sharedApplication] setAlternateIconName:@"PremiumTurbo" completionHandler:^(NSError * _Nullable error) {
-            if (error == nil) {
-            }else{
-            }
-        }];
-
-    } else if ([button isEqualToString:@"Black.png"]) {
-        [[UIApplication sharedApplication] setAlternateIconName:@"PremiumBlack" completionHandler:^(NSError * _Nullable error) {
-            if (error == nil) {
-            }else{
-            }
-        }];
+        AlertPresenter *alertPresenter = [[AlertPresenter alloc] init];
+        [alertPresenter presentAlert];
     }
 }
 

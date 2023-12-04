@@ -1,17 +1,26 @@
-export ARCHS = arm64 arm64e
+ARCHS = arm64e arm64
+
+export TARGET = iphone:15.0
+
+THEOS_PACKAGE_SCHEME=rootless
+
+export Bundle = ph.telegra.Telegraph
+
+PACKAGE_VERSION = 1.1
+
 DEBUG = 0
-export TARGET = iphone:clang:14.2
-GO_EASY_ON_ME = 1
 
-PACKAGE_VERSION = 1.0
-
-export SYSROOT = $(THEOS)/sdks/iPhoneOS14.2.sdk
+export SYSROOT = $(THEOS)/sdks/iPhoneOS15.0.sdk
 
 include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = TelegaIcons
-$(TWEAK_NAME)_FILES = Tweak.xm
-$(TWEAK_NAME)_CFLAGS = -fobjc-arc
-$(TWEAK_NAME)_FRAMEWORKS = UIKit Foundation SpringBoardServices
+
+TelegaIcons_FILES = Tweak.xm TelegaIcons.swift
+TelegaIcons_FRAMEWORKS = UIKit Foundation SpringBoardServices
+TelegaIcons_CFLAGS = -fobjc-arc
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+
+install5::
+		install5.exec
