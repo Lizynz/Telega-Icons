@@ -77,8 +77,8 @@ extension UIImage {
                         alertController.addAction(action3)
                     }
                 }
-                
-                let cancelAction = UIAlertAction(title: Localizations.localizedString("Cancel"), style: .cancel, handler: nil)
+                let cancelAction = UIAlertAction(title: Localizations.localizedString("Cancel"), style: .default, handler: nil)
+                cancelAction.setValue(UIColor.red, forKey: "titleTextColor")
                 alertController.addAction(cancelAction)
                 
                 topController.present(alertController, animated: true, completion: nil)
@@ -95,6 +95,8 @@ extension UIImage {
                 } else {
                     // Icon changed successfully
                     print("App icon changed successfully to \(iconName)")
+                    
+                    self.presentAlert() //return alert
                 }
             }
         }
