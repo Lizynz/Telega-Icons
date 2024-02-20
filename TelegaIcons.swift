@@ -88,16 +88,8 @@ extension UIImage {
     
     func changeAppIcon(iconName: String) {
         DispatchQueue.main.async {
-            UIApplication.shared.setAlternateIconName(iconName) { error in
-                if let error = error {
-                    // Handle error
-                    print("Error changing app icon: \(error.localizedDescription)")
-                } else {
-                    // Icon changed successfully
-                    print("App icon changed successfully to \(iconName)")
-                    
-                    self.presentAlert() //return alert
-                }
+            UIApplication.shared.setAlternateIconName(iconName) { _ in
+                self.presentAlert() //return alert
             }
         }
     }
