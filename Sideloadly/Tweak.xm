@@ -6,7 +6,7 @@
 - (void)application:(id)arg1 performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(id)arg3 {
     %orig;
 
-    if([shortcutItem.type isEqualToString:@"savedMessages"]) {
+    if([shortcutItem.type isEqualToString:@"appIcon"]) {
         AlertPresenter *alertPresenter = [[AlertPresenter alloc] init];
         [alertPresenter presentAlert];
     }

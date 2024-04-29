@@ -4,7 +4,7 @@ export TARGET = iphone:15.0
 
 THEOS_PACKAGE_SCHEME=rootless
 
-PACKAGE_VERSION = 1.1
+PACKAGE_VERSION = 1.2
 
 DEBUG = 0
 
