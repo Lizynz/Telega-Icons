@@ -1,13 +1,8 @@
 ARCHS = arm64e arm64
-
 export TARGET = iphone:15.0
-
 THEOS_PACKAGE_SCHEME=rootless
-
 export Bundle = ph.telegra.Telegraph
-
-PACKAGE_VERSION = 1.1
-
+PACKAGE_VERSION = 1.2
 DEBUG = 0
 
 export SYSROOT = $(THEOS)/sdks/iPhoneOS15.0.sdk

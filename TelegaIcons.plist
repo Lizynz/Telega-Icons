@@ -1,7 +1,6 @@
 {
 	Filter = {
 		Bundles = (
-			"com.apple.springboard",
 			"ph.telegra.Telegraph",
 		);
 	};

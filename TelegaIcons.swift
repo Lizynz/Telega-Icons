@@ -51,30 +51,39 @@ extension UIImage {
                    let turboImage2 = UIImage(named: "Premium/Icons/Turbo"),
                    let resizedImage2 = turboImage2.resized(to: CGSize(width: 40, height: 40)),
                    let turboImage3 = UIImage(named: "Premium/Icons/Black"),
-                   let resizedImage3 = turboImage3.resized(to: CGSize(width: 40, height: 40)) {
+                   let resizedImage3 = turboImage3.resized(to: CGSize(width: 40, height: 40)),
+                   let turboImage4 = UIImage(named: "WhiteFilledIcon"),
+                   let resizedImage4 = turboImage4.resized(to: CGSize(width: 40, height: 40)){
                     
                     let cornerRadius: CGFloat = 8.0
                     if let imageWithRadius1 = resizedImage1.withRoundedCornersResized(to: CGSize(width: 40, height: 40), radius: cornerRadius),
                        let imageWithRadius2 = resizedImage2.withRoundedCornersResized(to: CGSize(width: 40, height: 40), radius: cornerRadius),
-                       let imageWithRadius3 = resizedImage3.withRoundedCornersResized(to: CGSize(width: 40, height: 40), radius: cornerRadius) {
+                       let imageWithRadius3 = resizedImage3.withRoundedCornersResized(to: CGSize(width: 40, height: 40), radius: cornerRadius),
+                       let imageWithRadius4 = resizedImage4.withRoundedCornersResized(to: CGSize(width: 40, height: 40), radius: cornerRadius) {
                         
-                        let action1 = UIAlertAction(title: Localizations.localizedString("Premium"), style: .default) { _ in
-                            self.changeAppIcon(iconName: "Premium")
+                        let action1 = UIAlertAction(title: Localizations.localizedString("WhiteFilledIcon"), style: .default) { _ in
+                            self.changeAppIcon(iconName: "WhiteFilledIcon")
                         }
-                        action1.setValue(imageWithRadius1.withRenderingMode(.alwaysOriginal), forKey: "image")
+                        action1.setValue(imageWithRadius4.withRenderingMode(.alwaysOriginal), forKey: "image")
                         alertController.addAction(action1)
                         
-                        let action2 = UIAlertAction(title: Localizations.localizedString("Turbo"), style: .default) { _ in
-                            self.changeAppIcon(iconName: "PremiumTurbo")
+                        let action2 = UIAlertAction(title: Localizations.localizedString("Premium"), style: .default) { _ in
+                            self.changeAppIcon(iconName: "Premium")
                         }
-                        action2.setValue(imageWithRadius2.withRenderingMode(.alwaysOriginal), forKey: "image")
+                        action2.setValue(imageWithRadius1.withRenderingMode(.alwaysOriginal), forKey: "image")
                         alertController.addAction(action2)
                         
-                        let action3 = UIAlertAction(title: Localizations.localizedString("Black"), style: .default) { _ in
+                        let action3 = UIAlertAction(title: Localizations.localizedString("Turbo"), style: .default) { _ in
+                            self.changeAppIcon(iconName: "PremiumTurbo")
+                        }
+                        action3.setValue(imageWithRadius2.withRenderingMode(.alwaysOriginal), forKey: "image")
+                        alertController.addAction(action3)
+                        
+                        let action4 = UIAlertAction(title: Localizations.localizedString("Black"), style: .default) { _ in
                             self.changeAppIcon(iconName: "PremiumBlack")
                         }
-                        action3.setValue(imageWithRadius3.withRenderingMode(.alwaysOriginal), forKey: "image")
-                        alertController.addAction(action3)
+                        action4.setValue(imageWithRadius3.withRenderingMode(.alwaysOriginal), forKey: "image")
+                        alertController.addAction(action4)
                     }
                 }
                 let cancelAction = UIAlertAction(title: Localizations.localizedString("Cancel"), style: .default, handler: nil)
