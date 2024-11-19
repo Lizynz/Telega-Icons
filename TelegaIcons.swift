@@ -1,22 +1,17 @@
 import SwiftUI
 import UIKit
 import Foundation
+import libroot
+
+let LANG_PATH = jbRootPath("/Library/Application Support/Telega/Localizations.bundle")
 
 class Localizations {
-    static let bundle = Bundle(path: "/var/jb/Library/Application Support/Telega/Localizations.bundle")
+    static let bundle = Bundle(path: LANG_PATH)
 
     static func localizedString(_ key: String) -> String {
         return bundle?.localizedString(forKey: key, value: nil, table: nil) ?? ""
     }
 }
-
-//class Localizations {
-//    static let bundle = Bundle(path: "/Library/Application Support/Telega/Localizations.bundle")
-//
-//    static func localizedString(_ key: String) -> String {
-//        return bundle?.localizedString(forKey: key, value: nil, table: nil) ?? ""
-//    }
-//}
 
 extension UIImage {
     func resized(to size: CGSize) -> UIImage? {

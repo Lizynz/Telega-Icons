@@ -1,4 +1,4 @@
-Package: com.lizynz.telegaicons.rootless
+Package: com.lizynz.telegaicons
 Name: Telega Icons
 Depends: mobilesubstrate, firmware (>= 15.0)
 Architecture: iphoneos-arm
